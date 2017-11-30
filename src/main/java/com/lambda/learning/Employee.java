@@ -8,6 +8,14 @@ public class Employee {
     private Integer age;
     private String country;
 
+    public static List<Employee> buildList() {
+        List<Employee> employees = Arrays.asList(new Employee(), new Employee(), new Employee());
+        employees.get(0).name("Lilei").age(22).country("China");
+        employees.get(1).name("Hanmeimei").age(23).country("China");
+        employees.get(2).name("Tom").age(24).country("USA");
+        return employees;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,15 +41,6 @@ public class Employee {
     public Employee country(String country) {
         this.country = country;
         return this;
-    }
-
-
-    public static List<Employee> buildList() {
-        List<Employee> employees = Arrays.asList(new Employee(), new Employee(), new Employee());
-        employees.get(0).name("Lilei").age(22).country("China");
-        employees.get(1).name("Hanmeimei").age(23).country("China");
-        employees.get(2).name("Tom").age(24).country("USA");
-        return employees;
     }
 
     @Override

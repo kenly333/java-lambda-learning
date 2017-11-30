@@ -1,21 +1,29 @@
 package com.lambda.learning;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.function.Predicate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class PredicateTests {
+
+    public static void filter(List<Employee> employees, Predicate<Employee> condition) {
+        for (Employee employee : employees) {
+            if (condition.test(employee)) {
+                System.out.println(employee.getName() + " ");
+            }
+        }
+    }
 
     @Test
     public void predicateTest() {
         Employee employee = new Employee().name("Hanmeimei");
         Predicate<Employee> condition = e -> e.getName().startsWith("H");
-        Boolean r=condition.test(employee);
+        Boolean r = condition.test(employee);
 
-        assertEquals(true,r);
+        assertEquals(true, r);
     }
 
     @Test
@@ -37,13 +45,5 @@ public class PredicateTests {
         System.out.println("Print employee whose age greater than 23:");
         filter(employees, e -> e.getAge() > 23);
 
-    }
-
-    public static void filter(List<Employee> employees, Predicate<Employee> condition) {
-        for (Employee employee : employees) {
-            if (condition.test(employee)) {
-                System.out.println(employee.getName() + " ");
-            }
-        }
     }
 }

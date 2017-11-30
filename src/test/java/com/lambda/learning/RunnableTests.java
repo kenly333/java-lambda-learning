@@ -1,6 +1,6 @@
 package com.lambda.learning;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class RunnableTests {
 
@@ -18,6 +18,6 @@ public class RunnableTests {
     @Test
     public void runnableLambdaTest() {
         Employee employee = new Employee().name("Hanmeimei");
-        new Thread( () -> System.out.println(employee.toString()) ).start();
+        new Thread(() -> System.out.println(employee.toString())).start();
     }
 }
