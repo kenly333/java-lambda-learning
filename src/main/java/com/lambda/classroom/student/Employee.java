@@ -1,15 +1,15 @@
-package com.lambda.classroom;
+package com.lambda.classroom.student;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Student {
+public class Employee {
     private String name;
     private Integer age;
     private String country;
 
-    public static List<Student> buildList() {
-        List<Student> employees = Arrays.asList(new Student(), new Student(), new Student());
+    public static List<Employee> buildList() {
+        List<Employee> employees = Arrays.asList(new Employee(), new Employee(), new Employee());
         employees.get(0).name("Lilei").age(22).country("China");
         employees.get(1).name("Hanmeimei").age(23).country("China");
         employees.get(2).name("Tom").age(24).country("USA");
@@ -20,7 +20,7 @@ public class Student {
         return name;
     }
 
-    public Student name(String name) {
+    public Employee name(String name) {
         this.name = name;
         return this;
     }
@@ -29,7 +29,7 @@ public class Student {
         return age;
     }
 
-    public Student age(Integer age) {
+    public Employee age(Integer age) {
         this.age = age;
         return this;
     }
@@ -38,9 +38,13 @@ public class Student {
         return country;
     }
 
-    public Student country(String country) {
+    public Employee country(String country) {
         this.country = country;
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "name: " + this.getName() + ", age: " + this.getAge() + ", from: " + this.getCountry();
+    }
 }

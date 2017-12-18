@@ -1,5 +1,6 @@
 package com.lambda.learning;
 
+import com.lambda.classroom.student.Employee;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
